@@ -1,0 +1,186 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Owl Carousel CSS and JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <title>Click Fit</title>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <div class="container d-flex justify-content-center align-items-center">
+          <div class="text-end">
+            <img class="logoImage" src="../images/dumbbell.png" alt="" />
+          </div>
+          <h2 class="text-center mx-3 my-5 title">Click Fit</h2>
+        </div>
+      </div>
+      <div class="container text-center title my-5">
+        <h2>WElCOME TO CLICK FIT</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+          quisquam deserunt id earum aliquid. Et ipsa corrupti quisquam nam
+          neque!
+        </p>
+      </div>
+      <div class="owl-carousel">
+        <div class="item"><img src="./images/image1.jpg" alt="Image 1" /></div>
+        <div class="item"><img src="./images/image2.jpg" alt="Image 2" /></div>
+        <div class="item"><img src="./images/image3.jpg" alt="Image 3" /></div>
+        <div class="item"><img src="./images/image4.jpg" alt="Image 4" /></div>
+        <!-- Add more items as needed -->
+      </div>
+      <div class="text-center title my-5">
+        <h2>The Body Achieves What The Mind Believes</h2>
+
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-12 col-lg-6 p-5">
+              <div class="text-start">
+                <img class="w-100" src="/images/image5.jpg" alt="" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 my-auto p-5">
+              <button id="information" class="header border-0 p-3 rounded">
+                Genarate The Json Data
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center my-5 title">
+        <h2 class="my-5">Upload Your Image</h2>
+
+        <input
+          class="border p-2 rounded"
+          type="file"
+          id="imageInput"
+          accept="image/*"
+        />
+        <button id="uploadButton" class="header border-0 p-2 rounded mx-2">
+          Upload Image
+        </button>
+      </div>
+
+      <div class="text-center title my-3">
+        <h2>Connect With Us By Fill Up The Form</h2>
+        <div class="container">
+          <div class="row g-5 my-3">
+            <div class="col-12 col-lg-6 p-5">
+              <div class="text-start mb-3">
+                <label for="">Email </label>
+                <br />
+                <input
+                  id="email"
+                  class="w-50 p-1 mt-1"
+                  type="text"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="text-start mb-3">
+                <label for="">Password </label>
+                <br />
+                <input
+                  id="password"
+                  class="w-50 p-1 mt-1"
+                  type="password"
+                  placeholder="Enter Your Password"
+                />
+              </div>
+
+              <div class="text-start mb-3">
+                <label for="">Type </label> <br />
+                <input
+                  id="type"
+                  class="w-50 p-1 mt-1"
+                  type="text"
+                  placeholder="Enter Your Type"
+                />
+              </div>
+              <div class="text-start mb-3">
+                <label for="">Active </label> <br />
+                <input
+                  id="active"
+                  class="w-50 p-1 mt-1"
+                  type="number"
+                  placeholder="Enter Your Active"
+                />
+              </div>
+              <div class="text-start mb-3">
+                <input
+                  id="submitBtn"
+                  class="w-50 p-1 mt-1"
+                  type="submit"
+                  value="Add User"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 my-auto p-5">
+              <div class="text-start">
+                <ol id="data-list"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 3, // Number of items to show at once
+          loop: true, // Infinite loop
+          margin: 10, // Space between items
+          autoplay: true, // Auto-play the carousel
+          autoplayTimeout: 3000, // Auto-play interval in milliseconds
+          responsive: {
+            0: {
+              items: 1, // Number of items to show on small screens
+            },
+            768: {
+              items: 2, // Number of items to show on medium screens
+            },
+            992: {
+              items: 3, // Number of items to show on large screens
+            },
+          },
+        });
+      });
+    </script>
+    <script src="./js/DataLoad.js"></script>
+    <script src="./js/imageUpload.js"></script>
+    <script src="./js/form.js"></script>
+  </body>
+</html>
